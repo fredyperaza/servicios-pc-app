@@ -1,10 +1,10 @@
-// data/catalog.ts
+// data/catalogo.ts
 
 export interface ItemCatalogo {
   id: string;
   titulo: string;
   categoria: 'cctv' | 'biometricos' | 'mantenimiento' | 'redes';
-  tipo: 'producto' | 'servicio' | 'paquete';
+  tipo: 'Paquete' | 'Producto' | 'Servicio';
   descripcionCorta: string;
   detalles: string[];
   precioReferencia?: string;
@@ -12,127 +12,127 @@ export interface ItemCatalogo {
 }
 
 export const catalogoNegocio: ItemCatalogo[] = [
-  // --- CCTV Y VIDEOVIGILANCIA ---
+  // --- VIDEOVIGILANCIA CCTV ---
   {
     id: 'kit-4-camaras',
-    titulo: 'Kit CCTV 4 Cámaras Full HD + Grabador (DVR)',
+    titulo: 'Kit CCTV de 4 cámaras Full HD con grabador DVR',
     categoria: 'cctv',
-    tipo: 'paquete',
-    descripcionCorta: 'Sistema completo de videovigilancia con monitoreo en tiempo real desde el celular.',
+    tipo: 'Paquete',
+    descripcionCorta: 'Videovigilancia completa para tu hogar o negocio, con monitoreo en tiempo real desde el celular.',
     detalles: [
       'Grabador DVR de 4 canales con disco duro instalado',
-      '4 cámaras de seguridad HD aptas para interior/exterior con visión nocturna',
+      '4 cámaras HD para interior o exterior con visión nocturna',
       'Fuentes de poder y conectores de alta calidad',
-      'Configuración de app móvil incluida'
+      'Configuración de la app móvil incluida',
     ],
-    precioReferencia: 'Cotizar según requerimiento',
-    destacado: true
+    precioReferencia: 'Cotización según tu requerimiento',
+    destacado: true,
   },
   {
     id: 'kit-2-camaras',
-    titulo: 'Kit CCTV 2 Cámaras de Seguridad + Grabador',
+    titulo: 'Kit CCTV de 2 cámaras con grabador',
     categoria: 'cctv',
-    tipo: 'paquete',
-    descripcionCorta: 'Solución ideal y económica para pequeños negocios o accesos residenciales.',
+    tipo: 'Paquete',
+    descripcionCorta: 'Opción económica para pequeños negocios y accesos residenciales.',
     detalles: [
       'Grabador DVR básico de alta eficiencia',
       '2 cámaras de alta definición con visión infrarroja',
       'Cableado y accesorios de conexión básicos',
-      'Acceso remoto desde el teléfono celular'
+      'Acceso remoto desde el celular',
     ],
-    precioReferencia: 'Cotizar según requerimiento',
-    destacado: false
+    precioReferencia: 'Cotización según tu requerimiento',
+    destacado: false,
   },
 
   // --- CONTROL BIOMÉTRICO ---
   {
     id: 'lector-biometrico',
-    titulo: 'Venta e Instalación de Lector Biométrico de Huella',
+    titulo: 'Lector biométrico de huella: venta e instalación',
     categoria: 'biometricos',
-    tipo: 'producto',
-    descripcionCorta: 'Control de asistencia y acceso profesional para empresas y comercios.',
+    tipo: 'Producto',
+    descripcionCorta: 'Control de asistencia y acceso para empresas y comercios.',
     detalles: [
-      'Terminal biométrica de huella digital y registro rápido',
-      'Instalación física en pared y conexión a red local',
-      'Configuración inicial de software de turnos y reportes de asistencia'
+      'Terminal de huella digital con registro rápido',
+      'Instalación en pared y conexión a la red local',
+      'Configuración inicial de turnos y reportes de asistencia',
     ],
-    precioReferencia: 'Cotizar equipo e instalación',
-    destacado: true
+    precioReferencia: 'Cotización de equipo e instalación',
+    destacado: true,
   },
 
   // --- MANTENIMIENTO Y REPARACIÓN ---
   {
     id: 'mantenimiento-pc-laptop',
-    titulo: 'Mantenimiento Preventivo y Limpieza (PC / Laptops)',
+    titulo: 'Mantenimiento preventivo de PC y laptops',
     categoria: 'mantenimiento',
-    tipo: 'servicio',
-    descripcionCorta: 'Optimización térmica y física para alargar la vida útil de tus equipos.',
+    tipo: 'Servicio',
+    descripcionCorta: 'Limpieza y optimización para alargar la vida útil de tu equipo.',
     detalles: [
-      'Desensamble completo y limpieza profunda de polvo',
-      'Reemplazo de pasta térmica de alto rendimiento en procesador',
+      'Desarmado y limpieza profunda del polvo',
+      'Cambio de pasta térmica del procesador',
       'Limpieza de ventiladores y lubricación de ejes',
-      'Optimización de sistema operativo'
+      'Optimización del sistema operativo',
     ],
-    precioReferencia: 'Precio fijo de taller',
-    destacado: true
+    precioReferencia: 'Precio fijo en taller',
+    destacado: true,
   },
   {
     id: 'mantenimiento-consolas',
-    titulo: 'Limpieza y Mantenimiento de Consolas (PlayStation)',
+    titulo: 'Limpieza y mantenimiento de consolas PlayStation',
     categoria: 'mantenimiento',
-    tipo: 'servicio',
-    descripcionCorta: 'Solución al ruido excesivo y problemas de sobrecalentamiento.',
+    tipo: 'Servicio',
+    descripcionCorta: 'Soluciona el ruido excesivo y el sobrecalentamiento.',
     detalles: [
-      'Desensamble técnico especializado',
-      'Retiro de polvo acumulado en disipadores y fuente',
+      'Desarmado técnico especializado',
+      'Retiro del polvo acumulado en disipadores y fuente',
       'Cambio de pasta térmica y revisión de almohadillas térmicas',
-      'Pruebas de estrés y temperatura'
+      'Pruebas de estrés y temperatura',
     ],
-    precioReferencia: 'Precio fijo de taller',
-    destacado: false
+    precioReferencia: 'Precio fijo en taller',
+    destacado: false,
   },
   {
     id: 'mantenimiento-dvr',
-    titulo: 'Diagnóstico y Mantenimiento de Grabadores CCTV',
+    titulo: 'Diagnóstico y mantenimiento de grabadores CCTV',
     categoria: 'mantenimiento',
-    tipo: 'servicio',
-    descripcionCorta: 'Revisión de discos duros y limpieza interna de equipos de videovigilancia.',
+    tipo: 'Servicio',
+    descripcionCorta: 'Revisión de discos duros y limpieza interna de tus equipos de videovigilancia.',
     detalles: [
-      'Verificación del estado de salud del disco duro (S.M.A.R.T.)',
+      'Verificación del estado del disco duro (S.M.A.R.T.)',
       'Limpieza interna y actualización de firmware',
-      'Revisión de voltajes y fuentes de alimentación'
+      'Revisión de voltajes y fuentes de alimentación',
     ],
-    precioReferencia: 'Servicio en taller o domicilio',
-    destacado: false
+    precioReferencia: 'En taller o a domicilio',
+    destacado: false,
   },
 
   // --- REDES E INFRAESTRUCTURA ---
   {
     id: 'cableado-estructurado',
-    titulo: 'Instalación de Redes Cableadas (Puntos de Red Cat6)',
+    titulo: 'Instalación de puntos de red Cat6',
     categoria: 'redes',
-    tipo: 'servicio',
-    descripcionCorta: 'Conectividad estable y ordenada para oficinas, locales y hogares.',
+    tipo: 'Servicio',
+    descripcionCorta: 'Conexión estable y ordenada para oficinas, locales y hogares.',
     detalles: [
       'Tendido de cable UTP Categoría 6',
       'Instalación de rosetas y jacks RJ45',
-      'Pruebas de conectividad y velocidad'
+      'Pruebas de conectividad y velocidad',
     ],
-    precioReferencia: 'Cotizar por punto de red',
-    destacado: false
+    precioReferencia: 'Cotización por punto de red',
+    destacado: false,
   },
   {
     id: 'armado-racks',
-    titulo: 'Armado, Peinado y Montaje de Racks / Gabinetes de Red',
+    titulo: 'Armado y organización de racks y gabinetes de red',
     categoria: 'redes',
-    tipo: 'servicio',
-    descripcionCorta: 'Organización profesional de switches, patch panels y cableado de red.',
+    tipo: 'Servicio',
+    descripcionCorta: 'Switches, patch panels y cableado ordenados y rotulados.',
     detalles: [
       'Montaje de rack o gabinete mural',
-      'Instalación y ordenamiento con organizadores de cables',
-      'Etiquetado de puertos y conexión de switches'
+      'Organización del cableado con organizadores',
+      'Etiquetado de puertos y conexión de switches',
     ],
-    precioReferencia: 'Cotizar según tamaño del rack',
-    destacado: false
-  }
+    precioReferencia: 'Cotización según el tamaño del rack',
+    destacado: false,
+  },
 ];

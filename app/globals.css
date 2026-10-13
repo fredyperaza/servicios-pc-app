@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: #0B1F3A;
+  --color-navy-deep: #07142A;
+  --color-navy-mid: #12305A;
+  --color-brand: #19B5FE;
+  --color-wa: #0E9F6E;
+  --font-sans: var(--font-plex);
+  --font-display: var(--font-sora);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: #f8fafc; color: #334155; }
+:focus-visible { outline: 2px solid #19B5FE; outline-offset: 3px; }
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(25,181,254,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25,181,254,.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Rack de red: la pieza visual de la portada */
+.rack { background: #0B1F3A; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
+.rack-unit { background: #12305A; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; padding: 10px 14px 14px; }
+.rack-unit > span { display: block; font-size: 12px; color: #9fb3cc; margin-bottom: 8px; }
+.ports { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.ports i { height: 18px; background: #07142A; border: 1px solid rgba(255,255,255,.14); border-radius: 2px; position: relative; }
+.ports i.on::after { content: ""; position: absolute; top: 3px; right: 3px; width: 5px; height: 5px; border-radius: 50%; background: #19B5FE; box-shadow: 0 0 6px #19B5FE; }
+.ports i.blink::after { animation: led 2.4s ease-in-out infinite; }
+@keyframes led { 50% { opacity: .25; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ports i.blink::after { animation: none; }
 }

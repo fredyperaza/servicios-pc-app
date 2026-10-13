@@ -1,38 +1,36 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
+import { SITE } from "@/lib/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({ variable: "--font-sora", subsets: ["latin"] });
+const plex = IBM_Plex_Sans({
+  variable: "--font-plex",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Servicios a las PC's y M@s",
-  description: "Soporte técnico, redes, biométricos y CCTV en Santa Ana y todo El Salvador.",
+  title: {
+    default: "ProTekno | Redes, videovigilancia y control de acceso en El Salvador",
+    template: "%s | ProTekno",
+  },
+  description:
+    "Instalación y soporte de videovigilancia CCTV, redes, cableado estructurado y control de asistencia biométrico en Santa Ana y todo El Salvador.",
 };
 
-// ⚠️ Cambia por el número de WhatsApp de la empresa
-const TELEFONO_WHATSAPP = '50370000000';
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${sora.variable} ${plex.variable} font-sans antialiased`}>
+        <Navbar />
         {children}
-        {/* Botón flotante disponible en todo el sitio */}
-        <WhatsAppFloatButton telefono={TELEFONO_WHATSAPP} />
+        <Footer />
+        <WhatsAppFloatButton telefono={SITE.telefonoWhatsApp} />
       </body>
     </html>
   );
